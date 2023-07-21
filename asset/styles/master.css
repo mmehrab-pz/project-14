@@ -1,0 +1,851 @@
+body {
+  cursor: default;
+  position: relative;
+  background-color: black;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #1d1d1d;
+  border-radius: 20px;
+}
+
+#go-top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10%;
+  right: 5%;
+  background-color: #888888;
+  z-index: 500;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+#go-top > i {
+  font-size: 20px;
+  color: #111111;
+}
+#go-top:hover {
+  background-color: #acacac;
+}
+
+.active-menu {
+  width: 100%;
+  height: 929px;
+  background-color: #111111;
+  transition: 0.8s ease-in-out;
+  position: fixed;
+  z-index: 10000000;
+  visibility: visible;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  left: 100%;
+  opacity: 0;
+}
+.active-menu > div {
+  height: 100%;
+}
+.active-menu > div:nth-of-type(1) {
+  background: url(../img/img02.jpg);
+  background-size: cover;
+}
+.active-menu > div:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.active-menu > div:nth-of-type(2) > div {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-family: "JosefinSans-regular";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.active-menu > div:nth-of-type(2) > div > i {
+  padding-left: 10px;
+}
+.active-menu > div:nth-of-type(2) > ul > li {
+  font-size: 60px;
+  color: white;
+  text-transform: capitalize;
+  font-family: "JosefinSans-semibold";
+  padding-top: 10px;
+  transition: 0.4s ease-in-out;
+}
+.active-menu > div:nth-of-type(2) > ul > li:hover {
+  transform: scale(1.1);
+}
+.active-menu > div:nth-of-type(2) > ul > li:hover > a {
+  color: white;
+}
+
+#subscribe {
+  width: 100%;
+  height: 100vh;
+  background-color: #111111;
+  position: fixed;
+  z-index: -1000000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.8s ease-in-out;
+  opacity: 0;
+}
+#subscribe > div {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-family: "JosefinSans-regular";
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#subscribe > div > i {
+  padding-left: 10px;
+}
+#subscribe > h3 {
+  font-family: "JosefinSans-regular";
+  font-size: 50px;
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+}
+#subscribe > p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-family: "JosefinSans-Thin";
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 20px;
+}
+#subscribe > form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#subscribe > form > input {
+  width: 605px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #888888;
+  font-family: "JosefinSans-regular";
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: white;
+}
+#subscribe > form > input::-moz-placeholder {
+  color: 888888;
+  font-family: "JosefinSans-regular";
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#subscribe > form > input::placeholder {
+  color: 888888;
+  font-family: "JosefinSans-regular";
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#subscribe > form > button {
+  height: 50px;
+  width: 150px;
+  background-color: white;
+  color: #111111;
+  font-family: "JosefinSans-regular";
+  text-transform: uppercase;
+  margin-top: 30px;
+  border: none;
+  font-size: 14px;
+  transition: 0.4s ease-in-out;
+}
+#subscribe > form > button:hover {
+  background-color: rgba(17, 17, 17, 0);
+  color: white;
+  border: 1px solid white;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+header > video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0%;
+  z-index: -1;
+}
+
+#nav-header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.4s ease-in-out;
+  z-index: 100;
+}
+#nav-header > p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "JosefinSans-medium";
+}
+#nav-header > div {
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "JosefinSans-regular";
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#nav-header > div > span {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-left: 15px;
+}
+#nav-header > div > span > span {
+  display: flex;
+  width: 75%;
+  height: 50%;
+  transition: 0.2s ease-in-out;
+}
+#nav-header > div > span > span:nth-of-type(1) {
+  margin-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+#nav-header > div > span > span:nth-of-type(2) {
+  margin-top: 5px;
+  border-top: 1px solid white;
+}
+#nav-header > div:hover > span > span:nth-of-type(1) {
+  transform: translateX(7px);
+}
+#nav-header > div:hover > span > span:nth-of-type(2) {
+  transform: translateX(-7px);
+}
+
+#header-content {
+  width: 100%;
+  padding: 50px 0;
+  padding-left: 10%;
+}
+#header-content > h1 {
+  font-family: "JosefinSans-regular";
+  color: white;
+  text-transform: capitalize;
+  font-size: 130px;
+}
+#header-content > div {
+  width: 350px;
+  padding: 20px;
+}
+#header-content > div > span {
+  color: rgba(255, 255, 255, 0.7019607843);
+  font-size: 13px;
+  font-family: "JosefinSans-regular";
+  text-transform: uppercase;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+#header-content > div > span:hover {
+  color: white;
+}
+
+main {
+  width: 100%;
+  background-color: #111111;
+}
+
+#about {
+  width: 100%;
+  padding: 150px 0;
+  background-color: #111111;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about > div {
+  min-height: 350px;
+  padding: 0 60px;
+}
+#about > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 3%;
+  padding-left: 9%;
+}
+#about > div:nth-of-type(1) > p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "JosefinSans-regular";
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+
+#Who-we-are {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+#Who-we-are > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+}
+#Who-we-are > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+#Who-we-are > p:nth-of-type(2) {
+  padding-top: 20px;
+}
+
+#What-we-do {
+  padding-right: 8%;
+}
+#What-we-do > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+  padding-top: 20px;
+}
+#What-we-do #progress {
+  width: 100%;
+}
+#What-we-do .progressBar {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgb(37, 37, 37);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: relative;
+}
+#What-we-do .progressBar > p {
+  font-family: "JosefinSans-regular";
+  color: white;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+#What-we-do .progressBar > span {
+  position: absolute;
+  border-bottom: 1px solid white;
+  height: 100px;
+}
+
+#gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#gallery > div {
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  height: 600px;
+}
+#gallery > div > span {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.6901960784);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 5%;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+#gallery > div > span > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+  padding-top: 20px;
+}
+#gallery > div > span > p {
+  font-family: "JosefinSans-regular";
+  color: white;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+#gallery > div > span > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+#gallery > div > span > div > i {
+  color: white;
+  font-size: 20px;
+  transition: 0.4s ease-in-out;
+}
+#gallery > div > span > div:hover {
+  background-color: white;
+}
+#gallery > div > span > div:hover > i {
+  color: #111111;
+}
+#gallery > div > span:hover {
+  opacity: 1;
+}
+#gallery > div:nth-of-type(1) {
+  background: url(../img/img04.jpg) center;
+}
+#gallery > div:nth-of-type(2) {
+  background: url(../img/img05.jpg) center;
+}
+#gallery > div:nth-of-type(3) {
+  background: url(../img/img06.jpg) center;
+}
+
+#portfolito {
+  width: 100%;
+  background-color: #111111;
+  min-height: 500px;
+  padding: 150px 0 50px 0;
+}
+
+#portfolito-p {
+  display: flex;
+  flex-wrap: wrap;
+}
+#portfolito-p > div {
+  min-height: 200px;
+}
+#portfolito-p > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 3%;
+  padding-left: 9%;
+}
+#portfolito-p > div:nth-of-type(1) > p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "JosefinSans-regular";
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+#portfolito-p > div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 60px;
+}
+#portfolito-p > div:nth-of-type(2) > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+}
+#portfolito-p > div:nth-of-type(2) > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+
+#portfolito-pic {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.portfolito-pic-card {
+  height: 615px;
+  width: 450px;
+  padding: 0 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.portfolito-pic-card > figure {
+  width: 100%;
+  height: 80%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  overflow: hidden;
+}
+.portfolito-pic-card > figure > img {
+  width: 110%;
+  transition: 0.8s ease-in-out;
+}
+.portfolito-pic-card > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+.portfolito-pic-card > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 30px;
+  text-transform: capitalize;
+  padding-top: 10px;
+}
+.portfolito-pic-card:hover > figure > img {
+  transform: scale(1.1);
+}
+
+#brand {
+  width: 100%;
+  min-height: 500px;
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#brand > figure > img {
+  opacity: 0.6;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+#brand > figure > img:hover {
+  opacity: 1;
+}
+
+#services {
+  width: 100%;
+  min-height: 500px;
+  background-color: #111111;
+  padding-top: 150px;
+}
+
+#services-p {
+  display: flex;
+  flex-wrap: wrap;
+}
+#services-p > div {
+  min-height: 200px;
+}
+#services-p > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 3%;
+  padding-left: 9%;
+}
+#services-p > div:nth-of-type(1) > p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "JosefinSans-regular";
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+#services-p > div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 60px;
+}
+#services-p > div:nth-of-type(2) > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+}
+#services-p > div:nth-of-type(2) > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+
+#services-cards {
+  width: 100%;
+  padding: 50px 60px 100px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.services-card {
+  height: 345px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.services-card > h3 {
+  color: white;
+  font-family: "JosefinSans-regular";
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.services-card > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+
+#days-left {
+  width: 100%;
+  height: 560px;
+  background: url(../img/img22.jpg) fixed;
+  background-size: cover;
+}
+#days-left > div {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.6156862745);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#days-left > div > p {
+  color: white;
+  text-transform: uppercase;
+  font-family: "JosefinSans-regular";
+}
+#days-left > div > p:nth-of-type(1), #days-left > div > p:nth-of-type(3) {
+  font-size: 14px;
+}
+#days-left > div > p:nth-of-type(2) {
+  font-size: 140px;
+}
+
+footer {
+  background-color: #F4F4F4;
+  width: 100%;
+  min-height: 800px;
+  padding: 150px 0 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer > div {
+  min-height: 350px;
+  padding: 0 60px;
+}
+footer > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 3%;
+  padding-left: 9%;
+}
+footer > div:nth-of-type(1) > p {
+  color: #111111;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "JosefinSans-regular";
+  transform-origin: center;
+  transform: rotate(270deg);
+}
+
+#wellcome {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+#wellcome > h3 {
+  color: #111111;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+}
+#wellcome > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+#wellcome > section {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#wellcome > section > div {
+  width: 50%;
+  height: 50%;
+}
+#wellcome > section > div > h3 {
+  font-family: "JosefinSans-regular";
+  font-size: 24px;
+  color: #111111;
+  text-transform: capitalize;
+}
+#wellcome > section > div > p {
+  font-family: "JosefinSans-regular";
+  font-size: 15px;
+  color: #111111;
+  text-transform: capitalize;
+}
+#wellcome > section > div > a {
+  font-family: "JosefinSans-regular";
+  font-size: 15px;
+  color: #111111;
+  text-transform: capitalize;
+  transition: 0.4s ease-in-out;
+  display: block;
+}
+#wellcome > section > div > a:hover {
+  transform: translateX(10px);
+}
+
+#touch {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+#touch > h3 {
+  color: #111111;
+  font-family: "JosefinSans-regular";
+  font-size: 60px;
+  text-transform: capitalize;
+}
+#touch > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+}
+#touch > form {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#touch > form > input {
+  border: none;
+  border-bottom: 1px solid #111111;
+  outline: none;
+  font-family: "JosefinSans-regular";
+  padding-left: 5px;
+  padding-bottom: 10px;
+  transition: 0.4s ease-in-out;
+}
+#touch > form > input::-moz-placeholder {
+  font-family: "JosefinSans-regular";
+  color: #111111;
+  text-transform: capitalize;
+}
+#touch > form > input::placeholder {
+  font-family: "JosefinSans-regular";
+  color: #111111;
+  text-transform: capitalize;
+}
+#touch > form > input:focus {
+  border-bottom: 1px solid #888888;
+}
+#touch > form > button {
+  height: 50px;
+  width: 155px;
+  background-color: #111111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "JosefinSans-regular";
+  text-transform: uppercase;
+  letter-spacing: 1;
+  transition: 0.4s ease-in-out;
+  border: none;
+}
+#touch > form > button:hover {
+  background-color: #F4F4F4;
+  border: 1px solid #111111;
+  color: #111111;
+}
+
+#mehrab {
+  width: 100%;
+  background-color: #111111;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#mehrab > h3 {
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  font-size: 30px;
+  text-transform: capitalize;
+}
+#mehrab > p {
+  font-size: 16px;
+  color: #888888;
+  font-family: "JosefinSans-regular";
+  letter-spacing: 1px;
+  text-align: center;
+}
+#mehrab > div {
+  padding: 10px 0;
+  width: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#mehrab > div > i {
+  color: white;
+  font-size: 16px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+#mehrab > div > i:hover {
+  color: #888888;
+}/*# sourceMappingURL=master.css.map */

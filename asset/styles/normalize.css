@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'JosefinSans-Thin';
+    src: url(../font/Josefin/JosefinSans-Thin.ttf);
+}
+
+@font-face {
+    font-family: 'JosefinSans-regular';
+    src: url(../font/Josefin/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'JosefinSans-medium';
+    src: url(../font/Josefin/JosefinSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'JosefinSans-semibold';
+    src: url(../font/Josefin/JosefinSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'JosefinSans-bold';
+    src: url(../font/Josefin/JosefinSans-Bold.ttf);
+}
+
+/* --------------------------------------------------------------------------- */
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.row>* {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-fluid,
+.container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
